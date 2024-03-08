@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Madimi+One&family=Protest+Riot&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <div class="container flex-container margin-b30">
+            <h1>Comany Pet</h1>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="register.html">Register</a>
+            </nav>
+    </header>
+    <main class="container">
+        <h2 class="secondary-text centered-text">Register a new Pet</h2>
+        <div class="input-control">
+            <label>Name:</label>
+            <input type="text" id="txtName">
+        </div>
+        <div class="input-control">
+            <label>Age:</label>
+            <input type="number" id="txtAge">
+        </div>
+        <div class="input-control">
+            <label>Gender:</label>
+            <input type="text" id="txtGender">
+        </div>
+        <div class="btn-container">
+            <button class="btn" onclick="register();">Register</button>
+        </div>
+    </main>
+    <div id="petList"></div>
+    <!--creata a form-->
+    <script src="./script/display.js"></script>
+    <script src="./script/register.js"></script>
+</body>
+</html>
