@@ -94,20 +94,46 @@ main{
     margin-left: 7.9rem;
 }
 
+/*register*/
 .input-control{
     margin-bottom: 15px;
 }
 .input-control label{
     display: inline-block;
     font-size: 20px;
-    width: 7rem;
-
+    width: 10%;
 }
 .input-control input{
     font-size: 20px;
-    width: 30rem;
+    width: 60%;
 }
 .btn-container{
     display: flex;
     justify-content: flex-end;
+}
+.petList{
+    margin-left: 10rem;
+    margin-right: 10rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.petList img{
+    width: 30rem;
+}
+/*footer*/
+footer{
+    margin-top: 5rem;
+    background-color: rgb(234, 196, 11);
+}
+.footer-container{
+    height: 7rem;
+    padding-top: .5rem;
+    padding-left: 20rem;
+    padding-right: 20rem;
+}
+.footer-social{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
