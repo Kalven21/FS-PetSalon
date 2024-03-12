@@ -27,7 +27,7 @@
         <h2 class="secondary-text centered-text margin-b30">🐱  🐶  🐹</h2>
         <div class="centered-text">
             <div class="input-control">
-                <label>Name:</label>
+                <label>Name:*</label>
                 <input type="text" id="txtName">
             </div>
             <div class="input-control">
@@ -40,13 +40,21 @@
             </div>
             <div class="input-control">
                 <label>Breed:</label>
-                <input type="text" id="txtBreed">
+                <select id="txtBreed">
+                    <option value="" selected disabled>-- Select an option --</option>
+                    <option value="Dog">-- Dog --</option>
+                    <option value="Cat">-- Cat --</option>
+                    <option value="Bird">-- Bird --</option>
+                    <option value="Fish">-- Fish --</option>
+                </select>
             </div>
             <div class="input-control">
-                <label>Service:</label>
-                <select name="cars" id="cars">
-                    <option value="Available">Available</option>
-                    <option value="Unavailable">Unavailable</option>
+                <label>Service:*</label>
+                <select id="txtService">
+                    <option value="" selected disabled>-- Select an option --</option>
+                    <option value="Grooming">-- Grooming --</option>
+                    <option value="Vaccines">-- Vaccines --</option>
+                    <option value="Hotel">-- Hotel --</option>
                 </select>
             </div>
             <div class="btn-container margin-b80">
@@ -56,11 +64,17 @@
     </main>
     
     <h2 class="centered-text margin-b30">🐾 List of pets 🐾</h2>
-    <div class="petList">
-        <div id="petList"></div>
-        <img src="img/pets.png">
+    <div class="petList"></div>
+    <div class="petsInfo">
+        <label>Total: <span id="totalPets"></span></label>
+        <div>
+            <label>Grooming 🪮🛁: <span id="totalGroomings">0</span></label>
+            <label>Vaccines 💉💊: <span id="totalVaccine">0</span></label>
+            <label>Hotel 🏨💤: <span id="totalHotels">0</span></label>
+        </div>
     </div>
-
+    <div class="container" id="pets"></div>
+    
     <!--creata a form-->
     <script src="./script/display.js"></script>
     <script src="./script/register.js"></script>

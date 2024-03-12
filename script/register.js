@@ -32,39 +32,50 @@ function Pet(name,age,gender,breed,service){
     <p>The sum of the ages is: ${totalAge}</p>`
 }*/
 function register(){
-    //get the values from the HTML
-    console.log(inputName.value,inputAge.value,inputGender.value,inputBreed.value,inputService.value);
-    //create the object using the constructor
     let newPet = new Pet(inputName.value,inputAge.value,inputGender.value,inputBreed.value,inputService.value);
-    //spush the objet to the array
-    petSalon.pets.push(newPet);
-    //display the array on the console
-    displayNames();
+    if(isValid(newPet)){
+        petSalon.pets.push(newPet);
+        displayCards();
+        clearForm();
+        displayTotalAmountPets();
+        displayServiceCount();
+    }
 }
-function isValid(){
-
+function isValid(pet){
+    inputName.classList.remove("alert-error");
+    inputService.classList.remove("alert-error");
+    if(!pet.name || !pet.service){
+        if(!pet.name)inputName.classList.add("alert-error");
+        if(!pet.service)inputService.classList.add("alert-error");
+        return false;
+    }
+    return true;
+}
+function clearForm(){
+    inputName.value="";
+    inputAge.value="";
+    inputGender.value="";
 }
 function init(){
     //hook events
     //initial functions
     //calculateAverage();
     //creating a new pet
-    let pet1 = new Pet("Scooby",40,"Male","Dog","");
-    petSalon.pets.push(pet1);
-    let pet2 = new Pet("Doggy",60,"Male","Dog","");
-    petSalon.pets.push(pet2);
-    let pet3 = new Pet("Nia",20,"Female","Dog","");
-    petSalon.pets.push(pet3);
-    let pet4 = new Pet("Chato",60,"Male","Cat","");
-    petSalon.pets.push(pet4);
-    displayNames();
+    let pet1 = new Pet("Scooby",40,"Male","Dog","Grooming");
+    let pet2 = new Pet("Doggy",60,"Male","Dog","Vaccines");
+    let pet3 = new Pet("Nia",20,"Female","Dog","Hotel");
+    let pet4 = new Pet("Chato",60,"Male","Cat","Hotel");
+    petSalon.pets.push(pet1,pet2,pet3,pet4);
+    displayCards();
+    displayTotalAmountPets();
+    displayServiceCount();
 
     //load the inputs
     inputName = document.getElementById("txtName");
     inputAge = document.getElementById("txtAge");
     inputGender = document.getElementById("txtGender");
-    inputGender = document.getElementById("txtBreed");
-    inputGender = document.getElementById("txtService");
+    inputBreed = document.getElementById("txtBreed");
+    inputService = document.getElementById("txtService");
 }
 
 window.onload=init;
