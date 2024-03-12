@@ -39,6 +39,7 @@ function register(){
         clearForm();
         displayTotalAmountPets();
         displayServiceCount();
+        displayBreed();
     }
 }
 function isValid(pet){
@@ -55,6 +56,8 @@ function clearForm(){
     inputName.value="";
     inputAge.value="";
     inputGender.value="";
+    inputBreed.value="";
+    inputService.value="";
 }
 function init(){
     //hook events
@@ -69,6 +72,7 @@ function init(){
     displayCards();
     displayTotalAmountPets();
     displayServiceCount();
+    displayBreed();
 
     //load the inputs
     inputName = document.getElementById("txtName");
