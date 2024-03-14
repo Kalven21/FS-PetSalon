@@ -35,10 +35,11 @@ function register(){
     let newPet = new Pet(inputName.value,inputAge.value,inputGender.value,inputBreed.value,inputService.value);
     if(isValid(newPet)){
         petSalon.pets.push(newPet);
-        displayCards();
+        displayRows();
         clearForm();
         displayTotalAmountPets();
         displayServiceCount();
+        displayCards();
         displayBreed();
     }
 }
@@ -69,9 +70,10 @@ function init(){
     let pet3 = new Pet("Nia",20,"Female","Dog","Hotel");
     let pet4 = new Pet("Chato",60,"Male","Cat","Hotel");
     petSalon.pets.push(pet1,pet2,pet3,pet4);
-    displayCards();
+    displayRows();
     displayTotalAmountPets();
     displayServiceCount();
+    displayCards();
     displayBreed();
 
     //load the inputs
@@ -81,5 +83,4 @@ function init(){
     inputBreed = document.getElementById("txtBreed");
     inputService = document.getElementById("txtService");
 }
-
 window.onload=init;
