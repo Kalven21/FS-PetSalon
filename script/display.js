@@ -114,9 +114,3 @@ function displayRows(){
     }
     TABLE.innerHTML=row;
 }
-function deletePet(deleteIndex){
-    petSalon.pets.splice(deleteIndex,1);
-    document.getElementById(deleteIndex).remove();
-    displayRows();
-    displayCards();
-}

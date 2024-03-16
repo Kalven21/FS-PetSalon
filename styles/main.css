@@ -9,6 +9,9 @@ body{
 img{
     width: 30rem;
 }
+.img-15rem{
+    width: 15rem;
+}
 a{
     text-decoration: none;
 }
@@ -197,4 +200,37 @@ footer{
     display: flex;
     flex-direction: row;
     justify-content: space-around; 
+}
+.dark{
+    background-color: black;
+    color: white;
+    padding: 10px;
+}
+.notification{
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 300px;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    padding: .5rem;
+}
+li{
+    cursor: pointer;
+}
+.close{
+    cursor: pointer;
+    float: right;
+    font-size: 20px;
+}
+#notificationText{
+    margin: 0;
+}
+.alert-danger{
+    background-color: rgba(179, 0, 0, 0.658);
+}
+.alert-succes{
+    background-color: rgba(5, 169, 5, 0.74);
 }

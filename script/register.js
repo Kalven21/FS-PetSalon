@@ -35,6 +35,7 @@ function register(){
     let newPet = new Pet(inputName.value,inputAge.value,inputGender.value,inputBreed.value,inputService.value);
     if(isValid(newPet)){
         petSalon.pets.push(newPet);
+        showNotification("Something was added","alert-succes");
         displayRows();
         clearForm();
         displayTotalAmountPets();
@@ -60,8 +61,16 @@ function clearForm(){
     inputBreed.value="";
     inputService.value="";
 }
+function deletePet(deleteIndex){
+    petSalon.pets.splice(deleteIndex,1);
+    document.getElementById(deleteIndex).remove();
+    displayRows();
+    displayCards();
+    showNotification("Something was deleted","alert-danger");
+}
 function init(){
     //hook events
+    //$("#closeNotification").click(hideNotification);
     //initial functions
     //calculateAverage();
     //creating a new pet
