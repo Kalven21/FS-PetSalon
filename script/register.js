@@ -68,9 +68,23 @@ function deletePet(deleteIndex){
     displayCards();
     showNotification("Something was deleted","alert-danger");
 }
+function getServices(){
+    //read the local storage to get the services
+    let servceList = readItems();// this function in under Local Storage
+    //travel the array/list of services
+    for(let i=0;i<servceList.length;i++){
+        let service = servceList[i];
+        $("#txtService").append(
+            `<option value="${service.title}">${service.description}</option>`
+        )
+    }
+    //create the <option></option> element
+    
+    //insert it on the HTML
+}
 function init(){
     //hook events
-    //$("#closeNotification").click(hideNotification);
+    $("#closeNotification").click(hideNotification);
     //initial functions
     //calculateAverage();
     //creating a new pet
@@ -84,6 +98,7 @@ function init(){
     displayServiceCount();
     displayCards();
     displayBreed();
+    getServices();
 
     //load the inputs
     inputName = document.getElementById("txtName");

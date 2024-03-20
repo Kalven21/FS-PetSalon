@@ -10,11 +10,24 @@ function Services(description,price){
 }
 function registerSer(){
     let newService = new Services(inputServi.value,inputPrice.value);
-    if(isValid(newService)){
+    if(isValid(newService))
+    {
+        saveItem(newService);     
         Service.SERVICE.push(newService);
         showNotification("Something was added","alert-succes");
         displayInfo();
         clearForm();
+    }
+}
+function displayItems(){
+    let items = readItems();
+    let htmlList=$("#services");
+    htmlList.html("");
+    let li="";
+    for(let i=0;i<items.length;i++){
+        let item=items[i];
+        li=`<li>${item.description} - $${item.price}</li>`;
+        htmlList.append(li);
     }
 }
 function isValid(ser){
@@ -43,5 +56,6 @@ function clearForm(){
 function init(){
     inputServi = document.getElementById("txtService2");
     inputPrice = document.getElementById("txtPrice");
+    displayItems(); //load the data
 }
-window.onload=init;
+window.onload=init;[]

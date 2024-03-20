@@ -234,3 +234,7 @@ li{
 .alert-succes{
     background-color: rgba(5, 169, 5, 0.74);
 }
+.servicesList{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+}
